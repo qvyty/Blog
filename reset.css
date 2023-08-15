@@ -94,7 +94,21 @@ video {
 }
 
 input, textarea {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
   box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
 }
 /* HTML5 display-role reset for older browsers */
 article,

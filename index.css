@@ -1,38 +1,93 @@
-.post-title-input {
-  display: block;
-  margin-bottom: 20px;
-  width: 300px;
+html {
+  background-color: #000000;
 }
 
-.post-text-input {
-  display: block;
-  margin-bottom: 20px;
-  width: 300px;
+body {
+  font-family: "Courier Prime", Courier, monospace;
+  font-weight: normal;
+  font-size: 24px;
 }
 
-.new-post-btn {
-  width: 300px;
-  height: 30px;
+h2 {
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #18b700;
+}
+
+.blog__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.col__wrapper {
+  display: flex;
+  width: 900px;
+  height: 150px;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid #49fc03;
+  border-radius: 10px;
 }
 
 .col {
-  width: 400px;
-}
-
-.post__date{
-  color: aqua;
-}
-
-.post__title{font-weight: 700;}
-
-.row {
   display: flex;
-  gap: 30px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.posts {
+  color: #18b700;
+}
+
+.post-title-input {
+  display: flex;
+  width: 600px;
+  color: #18b700;
+  border: 1px solid #49fc03;
+}
+
+.post-text-input {
+  display: flex;
+  width: 600px;
+  height: 50px;
+  color: #18b700;
+  border: 1px solid #49fc03;
+}
+
+.new-post-btn {
+  display: flex;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+
+  background-image: url(./resources/new-post-btn.png);
+  background-size: contain;
+}
+
+.posts__wrapper {
+  margin-bottom: 40px;
+  padding: 40px;
+  width: 900px;
+  border: 1px solid #49fc03;
+  border-radius: 10px;
+}
+
+.post {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.post__date {
 }
 
 .validationMessage {
-  margin-top: 20px;
-  color: red;
+  margin-bottom: 10px;
+  color: #b70000;
 }
 
 .validationMessage_hidden {

@@ -1,7 +1,7 @@
 const posts = [];
 
-const TITLE_VALIDATION_LIMIT = 10;
-const TEXT_VALIDATION_LIMIT = 20;
+const TITLE_VALIDATION_LIMIT = 100;
+const TEXT_VALIDATION_LIMIT = 200;
 
 const postTitleInputNode = document.querySelector('.js-post-title-input');
 const postTextInputNode = document.querySelector('.js-post-text-input');
@@ -19,15 +19,7 @@ newPostBtnNode.addEventListener('click', function() {
   renderPosts();
 });
 
-postTitleInputNode.addEventListener('input', function(event) {
-  const currentValue = event.target.value;
-  if (currentValue.length > TITLE_VALIDATION_LIMIT) {
-    validationMessage.innerText = `Длинна заголовка не должна привышать $(TITLE_VALIDATION_LIMIT) символов`;
-    validationMessage.classList.remove("validationMessage_hidden");
-  } else {
-    validationMessage.classList.add("validationMessage_hidden");
-  }
-});
+
 
 postTitleInputNode.addEventListener('input', validation);
 
@@ -94,4 +86,14 @@ function renderPosts(){
 
     postsNode.innerHTML = postsHTML;
 }
+
+
+
+
+
+
+
+
+
+
 
