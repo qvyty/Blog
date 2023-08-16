@@ -63,18 +63,37 @@ function renderPosts() {
     const postElement = document.createElement('div');
     postElement.classList.add('post');
     postElement.innerHTML = `
-      
-        <div class="post__date">${post.dt}</div>
-        <h3 class="post__title">${post.title}</h3>
-        <div class="post__text">${post.text}</div>
-        <button class="post__delete-btn" onclick="deletePost(${index})"></button>
-      
+      <div class="post__date">${post.dt}</div>
+      <h3 class="post__title">${post.title}</h3>
+      <div class="post__text" onclick="editPost(${index})">
+        <input type="text" class="post__text-input" value="${post.text}">
+        <button class="post__save-btn" onclick="savePost(${index})"></button>
+      </div>
+      <button class="post__delete-btn" onclick="deletePost(${index})"></button>
     `;
     postsNode.appendChild(postElement);
   });
+}
+
+function editPost(index) {
+  const postTextElement = document.querySelector(`.js-posts .post:nth-child(${index+1}) .post__text`);
+  const postTextInputElement = document.createElement('textarea');
+  postTextInputElement.classList.add('post__text-input');
+  postTextInputElement.value = posts[index].text;
+  postTextElement.innerHTML = '';
+  postTextElement.appendChild(postTextInputElement);
+  postTextInputElement.focus();
+}
+
+function savePost(index) {
+  const postTextInputElement = document.querySelector(`.js-posts .post:nth-child(${index+1}) .post__text .post__text-input`);
+  posts[index].text = postTextInputElement.value;
+  renderPosts();
 }
 
 function deletePost(index) {
   posts.splice(index, 1);
   renderPosts();
 }
+
+renderPosts();
